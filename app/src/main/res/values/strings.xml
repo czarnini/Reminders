@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Reminders</string>
+    <string name="app_name">Przypomnienia</string>
+    <string name="nowe_przypomnienie">Nowe Przypomnienie</string>
+    <string name="wyjscie">Wyjście</string>
 </resources>
