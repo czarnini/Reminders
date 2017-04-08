@@ -1,25 +1,35 @@
 package com.apress.gerber.reminders;
 
+import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class RemindersActivity extends AppCompatActivity
 {
     private ListView mListView;
+    private RemindersDbAdapter mDbAdapter;
+    private SimpleCursorAdapter mCursorAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminders);
 
         mListView = (ListView) findViewById(R.id.reminders_list_view);
+        mListView.setDivider(null);
+        mDbAdapter = new RemindersDbAdapter(this);
+        mDbAdapter.open();
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.reminders_row, R.id.row_text, new String[]{"1","2","312342352323234234242"});
-        mListView.setAdapter(arrayAdapter);
+        Cursor cursor = mDbAdapter.fetchAllReminders();
+
+        String[] from = new String[]{RemindersDbAdapter.COL_CONTENT};
+        int[]    to = {R.id.row_text};
+        mCursorAdapter = new RemindersSimpleCursorAdapter(this, R.layout.reminders_row, cursor, from, to, 0);
+        mListView.setAdapter(mCursorAdapter);
     }
 
     @Override
