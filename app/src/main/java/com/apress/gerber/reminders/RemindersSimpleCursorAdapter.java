@@ -30,7 +30,7 @@ public class RemindersSimpleCursorAdapter extends SimpleCursorAdapter
         {
             holder = new ViewHolder();
             holder.colImp = cursor.getColumnIndexOrThrow(RemindersDbAdapter.COL_IMPORTANT);
-            holder.listTab = view.findViewById(R.id.row_tab);
+            holder.listTab = view.findViewById(R.id.importance_indicator);
             view.setTag(holder);
         }
         if(cursor.getInt(holder.colImp) >0 )

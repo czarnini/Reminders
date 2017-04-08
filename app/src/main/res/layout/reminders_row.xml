@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp">
         <View
+            android:id="@+id/importance_indicator"
             android:background="@color/green"
             class="android.view.View"
             android:layout_width="10dp"
