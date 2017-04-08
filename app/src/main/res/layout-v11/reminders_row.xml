@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:id="@+id/row_tab"
     android:layout_height="50dp"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:background="?android:attr/activatedBackgroundIndicator">
     <View
 
         class="android.view.View"
@@ -24,9 +24,10 @@
 
         <TextView
             android:id="@+id/row_text"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Treść przypomnienia jest dzisiaj wyjątkowo długa"
+            android:text="Treść przypomnienia"
             android:textAppearance="?android:textAppearanceLarge"
             android:gravity="center_vertical"
             android:ellipsize="end"
