@@ -3,4 +3,7 @@
     <string name="nowe_przypomnienie">Nowe Przypomnienie</string>
     <string name="wyjscie">Wyjście</string>
     <string name="usun">Usuń</string>
+    <string name="anuluj">Anuluj</string>
+    <string name="zatwierdz">Zatwierdź</string>
+    <string name="wazne">Ważne</string>
 </resources>
